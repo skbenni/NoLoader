@@ -1,8 +1,8 @@
-# Release process status
+# Release process
 
-The public source fork publishes a prepared Windows launcher archive, a self-contained installer, and a signed Tauri updater artifact for tagged `noloader-v*` releases. The installer reads the signed catalog from this fork's `noloader-catalog` branch and installs only artifacts whose catalog signature, size, and SHA-256 verify. The launcher checks the static `latest.json` manifest attached to the latest release and verifies the updater artifact with this fork's Tauri key. The upstream NoRisk updater API is not queried. Existing installations must first be migrated once with NoLoader Setup because they still contain the old updater endpoint and key.
+Tagged `noloader-v*` releases are built by `.github/workflows/noloader-release.yml`. A Windows x64 release contains the prepared launcher archive, self-contained installer, signed Tauri updater executable and signature, `latest.json`, and signed catalog. The installer reads the catalog from this repository's `noloader-catalog` branch and verifies its signature, archive size, and SHA-256 before installing. The launcher checks this repository's signed release feed; it does not query the NoRisk updater. Existing installations need a one-time migration with NoLoader Setup because they use the previous updater endpoint and key.
 
-The latest published release is [NoLoader Launcher 1.0.11](https://github.com/testaccount2109/NoLoader/releases/tag/noloader-v1.0.11), published October 25, 2026. The release includes the prepared Windows x64 launcher ZIP, signed updater `.exe` and signature, `latest.json`, installer, and signed catalog. The extension host version embedded in that launcher is `0.6.30-noloader.4`; the product release version and extension host version serve different purposes.
+Find the current published version and artifacts on the [GitHub Releases page](https://github.com/skbenni/NoLoader/releases/latest). The extension host version embedded in a launcher (currently `0.6.30-noloader.4`) is separate from its product release version.
 
 Before publishing a prepared launcher, a release must identify:
 
@@ -14,4 +14,4 @@ Before publishing a prepared launcher, a release must identify:
 - source changes and GPL-3.0 notices;
 - third-party runtime/native dependency licenses.
 
-The installer verifies signed catalog metadata and the artifact size and SHA-256 before writing files. It requires explicit confirmation before replacing the selected launcher folder, retains complete backups, and can restore the recorded original NoRisk folder after later updates. The release workflow publishes the prepared Windows build, signed updater artifact and manifest, and installer, then refreshes the signed raw catalog weekly. The Tauri signing key and catalog signing key are separate GitHub Actions secrets; neither private key belongs in the repository.
+The installer requires explicit confirmation before replacing the selected launcher folder, retains backups, and can restore the recorded original NoRisk folder after later updates. The release workflow also renews the signed catalog weekly. The Tauri updater key and catalog signing key are separate GitHub Actions secrets; neither private key belongs in the repository or release artifacts.

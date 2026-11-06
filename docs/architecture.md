@@ -33,7 +33,7 @@ The main integration points are:
 
 Three numbers have different purposes:
 
-- **Product release**, such as `1.0.11`, identifies the downloadable NoLoader Launcher app.
+- **Product release**, such as `1.0.x`, identifies the downloadable NoLoader Launcher app.
 - **Extension host version**, currently `0.6.30-noloader.4`, is checked against `launcherVersions` or `launcherVersionRange` in an extension manifest.
 - **NoLoader API version**, currently `6`, identifies methods and capabilities available to extension code. Current builds retain support for older APIs 1 through 5.
 
@@ -45,7 +45,7 @@ Worker-based extensions do not receive the main launcher DOM, React state, or Ta
 
 ## Installer and releases
 
-The Windows installer is in `apps/installer`. It obtains a signed catalog from the `noloader-catalog` branch and verifies catalog signature, artifact length, and SHA-256 before staging and replacing the selected launcher folder. Backups allow restoration of the original NoRisk launcher. Tagged `noloader-v*` releases use `.github/workflows/noloader-release.yml` to build the prepared launcher, installer, updater signature/manifest, and signed catalog. The latest published release is listed on the [GitHub Releases page](https://github.com/testaccount2109/NoLoader/releases).
+The Windows installer is in `apps/installer`. It obtains a signed catalog from the `noloader-catalog` branch and verifies catalog signature, artifact length, and SHA-256 before staging and replacing the selected launcher folder. Backups allow restoration of the original NoRisk launcher. Tagged `noloader-v*` releases use `.github/workflows/noloader-release.yml` to build the prepared launcher, installer, updater signature/manifest, and signed catalog. The latest published release is listed on the [GitHub Releases page](https://github.com/skbenni/NoLoader/releases).
 
 The signed catalog key and Tauri updater signing key are separate GitHub Actions secrets. Private signing keys must never be copied into the repository or distributed with a mod. See [installation](installation.md) and [release process](releases.md).
 

@@ -154,6 +154,7 @@ jobs:
       - name: Build self-contained plain installer
         shell: pwsh
         env:
+          NOLOADER_RELEASE_REPOSITORY: ${{ github.repository }}
           NOLOADER_RELEASE_CATALOG_URL: https://raw.githubusercontent.com/${{ github.repository }}/noloader-catalog/catalog.json
         run: |
           $env:NOLOADER_RELEASE_PUBLIC_KEY_PEM = Get-Content apps\installer\release-public-key.pem -Raw

@@ -11,7 +11,7 @@ software and remain with their respective owners.
 
 This work is licensed under GNU GPL version 3.0. The complete source code,
 license, and build scripts are published at:
-https://github.com/testaccount2109/noriskclient-launcher
+https://github.com/skbenni/NoLoader
 
 The software is provided without warranty. Third-party runtime licenses and
 notices are included beside the launcher executable.

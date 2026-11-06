@@ -8,7 +8,7 @@ if (!outputPath || !['true', 'false'].includes(distributionFlag)) {
   throw new Error('Expected output path and distribution-build flag.');
 }
 
-const repository = process.env.NOLOADER_RELEASE_REPOSITORY?.trim() || 'testaccount2109/noriskclient-launcher';
+const repository = process.env.NOLOADER_RELEASE_REPOSITORY?.trim() || 'skbenni/NoLoader';
 if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repository)) {
   throw new Error('NOLOADER_RELEASE_REPOSITORY must use the owner/repository format.');
 }

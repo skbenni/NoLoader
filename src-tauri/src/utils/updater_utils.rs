@@ -11,7 +11,7 @@ use tokio::time::{sleep, Duration};
 const UPDATE_CHECK_TIMEOUT: Duration = Duration::from_secs(20);
 const UPDATE_CHECK_CACHE_TTL: Duration = Duration::from_secs(60);
 const NOLOADER_UPDATE_ENDPOINT: &str =
-    "https://github.com/testaccount2109/noriskclient-launcher/releases/latest/download/latest.json";
+    "https://github.com/skbenni/NoLoader/releases/latest/download/latest.json";
 
 struct CachedUpdateCheck {
     checked_at: Instant,

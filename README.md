@@ -53,3 +53,9 @@ The repository's launcher source is licensed under [GPL-3.0](LICENSE). Third-par
 ## Contributing
 
 Contributions are welcome. Please review [development instructions](docs/development.md), run the relevant checks, and open a pull request against this repository. For bugs and feature requests, use the [issue tracker](https://github.com/skbenni/NoLoader/issues).
+
+## Note
+
+This project is still in beta, so some features may be incomplete, unstable, or not working as expected. we also doesnt have mods currently but you can make one.
+
+**Developed with the assistance of AI.**
